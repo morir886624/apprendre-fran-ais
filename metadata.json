@@ -1,0 +1,7 @@
+{
+  "name": "PersianPro - Translate & Learn",
+  "description": "A sophisticated translation app focusing on Persian (Farsi), featuring real-time translation, vocabulary tracking, and interactive quizzes based on your saved words.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

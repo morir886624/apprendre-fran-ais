@@ -1,0 +1,74 @@
+
+.learn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.flashcard-wrapper {
+  width: 100%;
+  max-width: 450px;
+  height: 520px;
+  perspective: 2000px;
+}
+
+.flashcard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.flashcard.flipped {
+  transform: rotateY(180deg);
+}
+
+.flashcard-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  background: var(--surface);
+  box-shadow: var(--shadow-elevated);
+  border: 1px solid var(--border-main);
+}
+
+.face-back {
+  background: var(--primary);
+  color: white;
+  transform: rotateY(180deg);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.card-label {
+  position: absolute;
+  top: 2.5rem;
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+}
+
+.face-back .card-label {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.flip-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  opacity: 0.4;
+  text-transform: uppercase;
+}

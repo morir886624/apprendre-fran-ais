@@ -1,0 +1,100 @@
+
+:root {
+  --primary: #312e81; 
+  --primary-light: #4338ca;
+  --primary-subtle: #f0f4ff;
+  --neutral: #000000;
+  --bg-app: #ffffff;
+  --surface: #ffffff;
+  --text-main: #000000; /* Absolute Black */
+  --text-muted: #111111; /* Extremely dark for labels */
+  --border-main: rgba(0, 0, 0, 0.1);
+  --shadow-soft: 
+    0 1px 2px rgba(0,0,0,0.02), 
+    0 4px 8px rgba(0,0,0,0.02), 
+    0 8px 16px rgba(0,0,0,0.02);
+  --shadow-elevated: 
+    0 2px 4px rgba(0,0,0,0.02), 
+    0 10px 20px rgba(0,0,0,0.04), 
+    0 20px 40px rgba(0,0,0,0.04);
+}
+
+.dark {
+  --primary: #818cf8;
+  --primary-light: #a5b4fc;
+  --primary-subtle: #1e1b4b;
+  --bg-app: #020617;
+  --surface: #0f172a;
+  --text-main: #ffffff; /* Absolute White */
+  --text-muted: #f1f5f9; /* Extremely light for labels */
+  --border-main: rgba(255, 255, 255, 0.1);
+  --shadow-soft: 0 10px 20px -5px rgba(0, 0, 0, 0.5);
+  --shadow-elevated: 0 30px 60px -12px rgba(0, 0, 0, 0.8);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Vazirmatn', sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  line-height: 1.6;
+}
+
+/* Force all standard text to use the main color variable */
+h1, h2, h3, h4, p, span, div, textarea, input, button {
+  color: var(--text-main);
+}
+
+.rtl {
+  direction: rtl;
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-inline: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 64px);
+}
+
+@media (max-width: 640px) {
+  .app-container {
+    padding-inline: 1.5rem;
+  }
+}
+
+.bordered-card {
+  border: 1px solid var(--border-main);
+  border-radius: 1.5rem;
+  background-color: var(--surface);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bordered-card:hover {
+  box-shadow: var(--shadow-elevated);
+  transform: translateY(-2px);
+}
+
+button {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+textarea::placeholder {
+  color: var(--text-main);
+  opacity: 0.4;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
